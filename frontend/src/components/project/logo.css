@@ -1,0 +1,47 @@
+/* Logo.css */
+.wait{
+  background-color: #a8edea;
+}
+.good{
+  max-width: 100%;
+  margin:0 auto;
+  padding:20px;
+  box-sizing: border-box;
+}
+.logo-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    height: 45vh;          /* Full viewport height */
+  }
+  
+  .logo-image {
+    max-width: 500; /* Ensure the logo scales responsively */
+    height: auto;
+  }
+  
+    .good {
+        max-width: 100%; /* Limit the width */
+        margin: 0 auto; /* Center horizontally */
+        padding: 2px; /* Space inside */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      }
+      .good {
+        background: linear-gradient(135deg, #a8edea, #fed6e3); /* Mint to Light Pink */
+        color: #333; /* Dark text color for better readability */
+      }
+      
+      /* .bad {
+         
+            background: linear-gradient(135deg, #f7971e, #ffd200); /* Retro Orange to Yellow */
+            /* color: #333; /* Dark text color for better readability * */
+      /* } */
+      
+      /* } */ 
+       .bad{
+        
+            background: linear-gradient(135deg, #f7971e, #ffd200); /* Retro Orange to Yellow */
+            color: #333; /* Dark text color for better readability */
+          
+          
+       }

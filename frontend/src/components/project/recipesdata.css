@@ -1,0 +1,56 @@
+/* src/recipes.css */
+
+/* Container for the entire recipe section */
+/* src/components/project/recipesdata.css */
+/* Main container for the recipe list */
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec); /* Light gradient background */
+}
+
+/* Individual recipe item styling */
+.recipe-item {
+  border: 1px solid #ddd;
+  border-radius: 12px; /* Slightly larger border radius for a more modern look */
+  padding: 15px;
+  width: calc(33.333% - 20px); /* Improved calculation for better responsiveness */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition effect */
+}
+
+.recipe-item:hover {
+  transform: translateY(-5px); /* Slightly lift the item on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+/* Styling for recipe images */
+.recipe-item img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto; /* Center align the image */
+}
+
+/* Styling for items with no image */
+.no-image {
+  width: 50%;
+  height: 150px; /* Increased height for better visibility */
+  background-color: #eaeaea; /* Slightly darker gray for better contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888; /* Slightly darker text color */
+  border-radius: 8px;
+  text-align: center;
+  font-size: 1.2rem; /* Larger font size for better readability */
+  font-weight: 500; 
+  font-family:'Edu SA Begginer',sans-serif;
+}
+h1{
+  font-family:'Edu SA Begginer';
+}

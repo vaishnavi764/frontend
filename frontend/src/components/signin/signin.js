@@ -76,77 +76,116 @@
 
 //     )
 // }
-import axios from 'axios';
 import React, { useState } from "react";
-import { api } from "../actions/api"
+import axios from 'axios';
+import { api } from '../actions/api';
 import { useNavigate } from "react-router-dom";
-import { Card, Button, CardBody, FormControl, Input, FormLabel, FormHelperText } from "@chakra-ui/react";
-export const SignIn = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-        
-const nav=useNavigate()
-    const handleSignIn = async () => {
-        try {
-            const response = await axios.post(api + "/signin", { email, password });
-            console.log(response.data);
-            if (response.data.message) {
-                console.log(response.data.values);
-                alert("signin success");
-            } else {
-                alert("User not found");
-                nav('/signup')
-            }
-        } catch (error) {
-            console.log(error);
-        }
-    };
+import {
+  Card,
+  Button,
+  CardBody,
+  FormControl,
+  Input,
+  VStack,
+  FormLabel,
+  FormHelperText,
+  Box,
+  Heading,
+} from "@chakra-ui/react";
 
-    return (
-        <>
-            <Card sx={{ maxWidth: 400, margin: 'auto', backgroundColor: 'white', textAlign: 'center' }}>
-                <CardBody>
-                    <FormControl>
-                        <FormLabel>Email Address</FormLabel>
-                        <Input
-                            type='email'
-                            placeholder='Enter your email'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <FormHelperText>We'll never share your email.</FormHelperText>
-                    </FormControl>
-                    <FormControl>
-                        <FormLabel>Password</FormLabel>
-                        <Input
-                            type='password'
-                            placeholder='Enter your password'
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <FormHelperText>Please enter your password.</FormHelperText>
-                    </FormControl>
-                    
-                    <Button
-                        type='button'
-                        variant='contained'
-                        color='primary'
-                        sx={{ border: '1px solid black', borderRadius: 4, padding: '8px 16px', backgroundColor: 'lightblue', width: '200px' }}
-                        onClick={handleSignIn}
-                    >
-                        Sign In
-                    </Button>
-                    <Button
-                    type='button'
-                    variant='link'
-                    color='blue'
-                    onClick={() =>nav('/signup')}
-                >
-                    Don't have an account? Sign Up
-                </Button>
-                    
-                </CardBody>
-            </Card>
-        </>
-    );
+export const SignIn = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleSignIn = async () => {
+    try {
+      const response = await axios.post(api + "/signin", { email, password });
+      console.log(response.data);
+      if (response.data.message) {
+        console.log(response.data.values);
+        alert("Login successful");
+        navigate('/home');
+      } else {
+        alert("User not found");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
+    <Box
+      minHeight="100vh"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      bgGradient="linear(to-r, teal.400, blue.500, purple.600)" // Gradient background
+      px={100} // Adjust padding if needed
+    >
+      <Card
+        maxW="400px"
+        w="full"
+        p={6}
+        boxShadow="xl"
+        borderRadius="md"
+        bg="white"
+      >
+        <CardBody>
+          <Heading mb={6} textAlign="center" size="lg" color="teal.600">
+            Sign In
+          </Heading>
+          <VStack spacing={4} align="stretch">
+            <FormControl id="email">
+              <FormLabel>Email Address</FormLabel>
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                focusBorderColor="teal.400"
+              />
+              <FormHelperText>We'll never share your email.</FormHelperText>
+            </FormControl>
+            <FormControl id="password">
+              <FormLabel>Password</FormLabel>
+              <Input
+                type="password"
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                focusBorderColor="teal.400"
+              />
+              <FormHelperText>Please enter your password.</FormHelperText>
+            </FormControl>
+            <Button
+              type="button"
+              colorScheme="teal"
+              size="lg"
+              width="full"
+              onClick={handleSignIn}
+            >
+              Sign In
+            </Button>
+            <Button
+              type="button"
+              variant="link"
+              colorScheme="teal"
+              onClick={() => navigate('/signup')}
+            >
+              Don't have an account? Sign Up
+            </Button>
+            <Button
+              type="button"
+              variant="link"
+              colorScheme="teal"
+              onClick={() => navigate('/forgot')}
+            >
+              Forgot Password?
+            </Button>
+          </VStack>
+        </CardBody>
+      </Card>
+    </Box>
+  );
 };

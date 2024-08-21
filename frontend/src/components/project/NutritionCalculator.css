@@ -1,0 +1,173 @@
+/* src/NutritionCalculator.css */
+/* .nutrition-calculator {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .calculate-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .calculate-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .results {
+    margin-top: 20px;
+  }
+  
+  .results h3 {
+    color: #333;
+  }
+  
+  .macro-results, .hydration-results {
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #666;
+  }
+   */
+   /* src/NutritionCalculator.css */
+  /* Wrapper for the layout */
+  .nutrition-calculator {
+    max-width: 700px;
+    margin: 10px auto;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: #f0f8ff; /* Light blue background */
+    border: 1px solid #4a90e2; /* Blue border */
+}
+
+h2 {
+    text-align: center;
+    color: #2c3e50; /* Dark blue-gray */
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #34495e; /* Darker blue-gray */
+}
+
+select, input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #bdc3c7;
+    background-color: #ecf0f1; /* Light grayish blue */
+    transition: border-color 0.3s ease;
+}
+
+select:focus, input[type="number"]:focus {
+    border-color: #3498db; /* Bright blue */
+    outline: none;
+}
+
+.calculate-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2ecc71; /* Green */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.calculate-btn:hover {
+    background-color: #27ae60; /* Darker green */
+    transform: translateY(-2px);
+}
+
+.calculate-btn:active {
+    background-color: #219653; /* Even darker green */
+    transform: translateY(0);
+}
+
+.results {
+    margin-top: 30px;
+}
+
+.results h3 {
+    color: #2c3e50; /* Dark blue-gray */
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.macro-results, .hydration-results {
+    background-color: #e8f4fd; /* Very light blue */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #a3c6e8;
+    margin-bottom: 20px;
+    font-size: large;
+}
+
+.pie-chart-container {
+    position: relative;
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #bdc3c7;
+}
+
+.pie-chart {
+    max-width: 100%;
+    height: auto;
+}

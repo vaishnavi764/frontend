@@ -1,0 +1,84 @@
+/* HomePage.css */
+/* Apply a global reset */
+/* App.css */
+.page-background {
+    position: fixed;
+    top: 0;
+    left: 100;
+    width: 100vw;
+    height: 100vh;
+    background: url('https://images.creativemarket.com/0.1.0/ps/8436213/1820/1214/m1/fpnw/wm1/smfymzyylfogh31jhumnxl4pyitf4kfwofnxxljcwv6jy3wfmepfup0jakedtfgq-.jpg?1590762544&s=abe9505c29be6863aef667707d2ef3f3') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1; /* Make sure the pseudo-element is behind other content */
+    /* animation: gradientAnimation 10s ease infinite; */
+    background-blend-mode: overlay; 
+    background: linear-gradient(270deg, rgba(244, 244, 244, 0.5), rgba(224, 224, 224, 0.5)),
+                url('https://images.creativemarket.com/0.1.0/ps/8436213/1820/1214/m1/fpnw/wm1/smfymzyylfogh31jhumnxl4pyitf4kfwofnxxljcwv6jy3wfmepfup0jakedtfgq-.jpg?1590762544&s=abe9505c29be6863aef667707d2ef3f3') no-repeat center center fixed;
+    background-size: cover;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    margin-top: 100px;
+    margin-left: 250px;
+    margin-bottom: 100px;
+    padding: 50px 50px 0px 50px;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    z-index: 1; /* Ensure content is above the background */
+}
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #911591;
+    background-color: #0fa2d3;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.button:active {
+    background-color: #004085;
+    transform: translateY(0);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .button {
+        font-size: 14px;
+    }
+}
